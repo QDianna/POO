@@ -3,6 +3,6 @@ Acest repo contine temele mele la materia Programare Orientata pe Obiect (Automa
 
 Tema 1 - Questionnaire Gnerator
 
-Tema 2 - Townhall Management
+Tema 2 - Townhall Management System
 
-Proiect - Stream recommendation system
+Proiect - Stream Recommendation System
