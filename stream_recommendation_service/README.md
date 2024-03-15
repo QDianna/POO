@@ -1,4 +1,4 @@
-# Proiect - Stream Recommend Service
+# Proiect - Stream Recommendation Service
 
 In acest proiect am implementat un sistem smart de recomandari de stream-uri audio pentru utilizatorii unei aplicatii de streamning,
 Aplicatiea permite accesul pentru 2 tipuri de utilizatori: ascultatori si creatori; stream-urile sunt de 3 feluri: muzica, podcast si audiobook;
