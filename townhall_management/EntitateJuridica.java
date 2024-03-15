@@ -1,7 +1,7 @@
 package main.java.org.example;
 
 import main.exceptions.*;
-
+import java.io.*;
 import java.util.Date;
 
 public class EntitateJuridica extends Utilizator{
@@ -12,21 +12,21 @@ public class EntitateJuridica extends Utilizator{
     }
 
     @Override
-    String scrieCerere(int tip) throws Exceptie0EntJur, Exceptie1EntJur, Exceptie2EntJur, Exceptie3EntJur, Exceptie6EntJur {
+    String scrieCerere(int tip) throws Ex_EntJur_0, Ex_EntJur_1, Ex_EntJur_2, Ex_EntJur_3, Ex_EntJur_6 {
         if (tip == 0)
-            throw new Exceptie0EntJur("Utilizator EntitateJuridica nu poate accesa inlocuire buletin");
+            throw new Exceptie0EntJur("Utilizator de tip 'Entitate Juridica' nu poate inainta o cerere de tip 'inlocuire buletin'");
 
         if (tip == 1)
-            throw new Exceptie1EntJur("Utilizator EntitateJuridica nu poate accesa inregistrare venit salarial");
+            throw new Exceptie1EntJur("Utilizator de tip 'Entitate Juridica' nu poate inainta o cerere de tip 'inregistrare venit salarial'");
 
         if (tip == 2)
-            throw new Exceptie2EntJur("Utilizator EntitateJuridica nu poate accesa inlocuire carnet de sofer");
+            throw new Exceptie2EntJur("Utilizator de tip 'Entitate Juridica' nu poate inainta o cerere de tip 'inlocuire carnet de sofer'");
 
         if (tip == 3)
-            throw new Exceptie3EntJur("Utilizator EntitateJuridica nu poate accesa inlocuire carnet de elev");
+            throw new Exceptie3EntJur("Utilizator de tip 'Entitate Juridica' nu poate inainta o cerere de tip 'inlocuire carnet de elev'");
 
         if (tip == 6)
-            throw new Exceptie6EntJur("Utilizator EntitateJuridica nu poate accesa inregistrare cupoane de pensie");
+            throw new Exceptie6EntJur("Utilizator de tip 'Entitate Juridica' nu poate inainta o cerere de tip 'inregistrare cupoane de pensie'");
 
         Cerere.tipCerere tipCerere;
 

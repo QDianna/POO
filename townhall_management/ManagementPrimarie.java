@@ -36,11 +36,9 @@ public class ManagementPrimarie {
     }
 
     public static void main(String[] args) throws IOException, ParseException,
-            Exceptie1Persoana, Exceptie3Persoana, Exceptie4Persoana, Exceptie5Persoana, Exceptie6Persoana,
-            Exceptie3Angajat, Exceptie4Angajat, Exceptie5Angajat, Exceptie6Angajat,
-            Exceptie1Pensionar, Exceptie3Pensionar, Exceptie4Pensionar, Exceptie5Pensionar,
-            Exceptie1Elev, Exceptie2Elev, Exceptie4Elev, Exceptie5Elev, Exceptie6Elev,
-            Exceptie0EntJur, Exceptie1EntJur, Exceptie2EntJur, Exceptie3EntJur, Exceptie6EntJur {
+            Ex_Pers_1, Ex_Pers_3, Ex_Pers_4, Ex_Pers_5, Ex_Pers_6, Ex_Ang_3, Ex_Ang_4, Ex_Ang_5, Ex_Ang_6,
+            Ex_Pens_1, Ex_Pens_3, Ex_Pens_4, Ex_Pens_5, Ex_Elev_1, Ex_Elev_2, Ex_Elev_4, Ex_Elev_5, Ex_Elev_6,
+            Ex_EntJur_0, Ex_EntJur_1, Ex_EntJur_2, Ex_EntJur_3, Ex_EntJur_6 {
 
         ManagementPrimarie primarie = new ManagementPrimarie();
 

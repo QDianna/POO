@@ -1,7 +1,7 @@
 package main.java.org.example;
 
 import main.exceptions.*;
-
+import java.io.*;
 import java.util.Date;
 
 public class Elev extends Utilizator{
@@ -11,21 +11,21 @@ public class Elev extends Utilizator{
     }
 
     @Override
-    String scrieCerere(int tip) throws Exceptie1Elev, Exceptie2Elev, Exceptie4Elev, Exceptie5Elev, Exceptie6Elev {
+    String scrieCerere(int tip) throws Ex_Elev_1, Ex_Elev_2, Ex_Elev_4, Ex_Elev_5, Ex_Elev_6 {
         if (tip == 1)
-            throw new Exceptie1Elev("Utilizator Elev nu poate accesa inregistrare venit salarial");
+            throw new Exceptie1Elev("Utilizator de tip 'Elev' nu poate inainta o cerere de tip 'inregistrare venit salarial'");
 
         if (tip == 2)
-            throw new Exceptie2Elev("Utilizator Elev nu poate accesa inlocuire carnet de sofer");
+            throw new Exceptie2Elev("Utilizator de tip 'Elev' nu poate inainta o cerere de tip 'inlocuire carnet de sofer'");
 
         if (tip == 4)
-            throw new Exceptie4Elev("Utilizator Elev nu poate accesa creare act constitutiv");
+            throw new Exceptie4Elev("Utilizator de tip 'Elev' nu poate inainta o cerere de tip 'creare act constitutiv'");
 
         if (tip == 5)
-            throw new Exceptie5Elev("Utilizator Elev nu poate accesa reinnoire autorizatie");
+            throw new Exceptie5Elev("Utilizator de tip 'Elev' nu poate inainta o cerere de tip 'reinnoire autorizatie'");
 
         if (tip == 6)
-            throw new Exceptie6Elev("Utilizator Elev nu poate accesa inregistrare cupoane de pensie");
+            throw new Exceptie6Elev("Utilizator de tip 'Elev' nu poate inainta o cerere de tip 'inregistrare cupoane de pensie'");
 
         Cerere.tipCerere tipCerere;
 

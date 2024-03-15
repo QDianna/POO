@@ -1,10 +1,6 @@
 package main.java.org.example;
 
-import main.exceptions.Exceptie3Angajat;
-import main.exceptions.Exceptie4Angajat;
-import main.exceptions.Exceptie5Angajat;
-import main.exceptions.Exceptie6Angajat;
-
+import main.exceptions.*;
 import java.io.*;
 import java.util.Date;
 
@@ -15,18 +11,18 @@ public class Angajat extends Utilizator{
     }
 
     @Override
-    String scrieCerere(int tip) throws Exceptie3Angajat, Exceptie4Angajat, Exceptie5Angajat, Exceptie6Angajat {
+    String scrieCerere(int tip) throws Ex_Ang_3, Ex_Ang_4, Ex_Ang_5, Ex_Ang_6 {
         if (tip == 3)
-            throw new Exceptie3Angajat("Utilizator Angajat nu poate accesa inlocuireCarnetDeElev");
+            throw new Exceptie3Angajat("Utilizator de tip 'Angajat' nu poate inainta o cerere de tip 'inlocuire carnet de elev'");
 
         if (tip == 4)
-            throw new Exceptie4Angajat("Utilizator Angajat nu poate accesa creareActConstitutiv");
+            throw new Exceptie4Angajat("Utilizator de tip 'Angajat'  nu poate inainta o cerere de tip 'creare act constitutiv'");
 
         if (tip == 5)
-            throw new ExceptieAngajat("Utilizatorul de tip angajat nu poate inainta o cerere de tip reinnoire autorizatie");
+            throw new ExceptieAngajat("Utilizatorul de tip 'Angajat' nu poate inainta o cerere de tip 'reinnoire autorizatie'");
 
         if (tip == 6)
-            throw new Exceptie6Angajat("Utilizator Angajat nu poate accesa inregistrareCupoaneDePensie");
+            throw new Exceptie6Angajat("Utilizator de tip 'Angajat' nu poate inainta o cerere de tip  'inregistrare cupoane de pensie'");
 
         Cerere.tipCerere tipCerere;
 
