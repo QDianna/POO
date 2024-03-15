@@ -1,4 +1,4 @@
-# tema-1-QDianna
+# Tema 1 - Questionnaire Generator
 tema-1-QDianna created by GitHub Classroom
 
 -- create-user --  
