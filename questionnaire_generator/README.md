@@ -2,7 +2,7 @@
 Proiect realizat pentru cursul **Programare Orientată pe Obiect (POO)**.  
 Aplicația permite crearea, gestionarea și completarea de chestionare (quizzes) cu întrebări și răspunsuri stocate în fișiere text.  
 
-## Funcționalități implementate
+## Funcționalități implementate  
 
 - **Gestionare utilizatori**
   - `create-user`: creează un utilizator nou (nume + parolă) și îl salvează în `users`
@@ -34,19 +34,19 @@ Aplicația permite crearea, gestionarea și completarea de chestionare (quizzes)
   - `delete-quizz`: șterge un chestionar pe baza id-ului
   - `cleanup-all`: golește toate fișierele și resetează id-urile statice
 
-## Structura fișierelor
+## Structura fișierelor  
 
 - `users` – informații despre utilizatori (username, parolă)  
 - `questions` – întrebări (id, text, tip, răspunsuri)  
 - `quizzes` – chestionare (id, autor, titlu, întrebări, răspunsuri)  
 - `submissions` – soluții trimise de utilizatori + scoruri  
 
-## Setup și rulare
+## Setup și rulare  
 1. Compilează și rulează proiectul cu Java (sau IDE-ul folosit).  
 2. Operațiile se fac prin apelarea metodelor clasei corespunzătoare (`User`, `Question`, `Quizz`).  
 3. Datele se persistă automat în fișiere text (`users`, `questions`, `quizzes`, `submissions`).  
 
-## Concluzie
+## Concluzie  
 Aplicația demonstrează concepte de **POO** precum:  
 - clase și obiecte,  
 - metode de validare,  
