@@ -1,22 +1,58 @@
-# Proiect - Stream Recommendation Service
+# Stream Recommendation Service
 
-In acest proiect am implementat un sistem smart de recomandari de stream-uri audio pentru utilizatorii unei aplicatii de streamning,
-Aplicatiea permite accesul pentru 2 tipuri de utilizatori: ascultatori si creatori; stream-urile sunt de 3 feluri: muzica, podcast si audiobook;
-creatorii sunt, de asemenea de 3 feluri in functie de ce stream produc. Recomandarile se fac atat pe baza informatiilor din sistem despre utilizatori,
-cat si pe baza informatiilor acumulate de-a lungul rularii aplicatiei.
+Proiect realizat pentru cursul **Programare Orientată pe Obiect / Sisteme de Recomandare**.  
+Implementarea constă într-un sistem smart de recomandări pentru stream-uri audio, cu două tipuri de utilizatori și mai multe tipuri de conținut.
 
-Sistemul este capabil sa modifice datele existente atunci cand se rulează comenzi de către ascultatori sau streameri (ex: dacă un utilizator asculta un nou
-stream, diferit de cele ascultate pana la momentul citirii din fișierul users.txt, atunci istoricul utilizatorului cat și numărul de ascultari al stream-ului
-respectiv se vor schimba).
+## Descriere
+Aplicația gestionează:
+- **Utilizatori**: ascultători și creatori
+- **Stream-uri**: 3 tipuri (muzică, podcast, audiobook)
+- **Creatori**: specializați în funcție de tipul de stream
 
-Comenzi streameri: adauga stream, listeaza streamuri, sterge stream.
-Comenzi ascultatori: listeaza history, asculta stream, recomanda 5 streamuri dupa preferinta, recomanda 3 streamuri surpriza.
+Recomandările se fac atât pe baza informațiilor inițiale (din `users.txt`), cât și pe baza interacțiunilor din timpul rularii aplicației (istoric de ascultare, număr de ascultări per stream).
 
-Astfel, recomandarile dupa preferinta se bazeaza urmatoarea logica:
-- Din lista de streamers ascultați de utilizator se aleg top 5 stream-uri (neascultate) cu cele mai multe ascultari
-- Recomandarea va fi făcută pentru tipul de stream pasat ca parametru (SONG, PODCAST sau AUDIOBOOK)
+Datele se actualizează dinamic:  
+- Dacă un utilizator ascultă un stream nou → istoricul și numărul de ascultări al stream-ului se modifică.  
+- Dacă un streamer adaugă/șterge conținut → lista de streamuri se actualizează.  
 
-Recomandarile 'surpriza' se fac dupa urmatorul algoritm:
-- Din lista de streamers din aplicație, ce nu au fost ascultați de utilizator se aleg 3 stream-uri ce au fost adaugate
-cel mai recent. Dacă au fost adaugate in acceasi zi, atunci se alege stream-ul cu cele mai multe ascultari.
-- Recomandarea va fi făcută pentru tipul de stream pasat ca parametru (SONG, PODCAST sau AUDIOBOOK)
+## Funcționalități
+
+### Comenzi pentru **streameri**
+- `addStream` – adaugă stream nou
+- `listStreams` – afișează streamurile existente
+- `deleteStream` – șterge un stream
+
+### Comenzi pentru **ascultători**
+- `listHistory` – afișează istoricul utilizatorului
+- `listenStream` – marchează ascultarea unui stream
+- `recommendPreferred` – recomandă 5 streamuri neascultate din preferințele utilizatorului
+- `recommendSurprise` – recomandă 3 streamuri „surpriză” din creatori neascultați
+
+## Algoritmi de recomandare
+
+### Recomandări după preferințe
+1. Se identifică streamerii ascultați de utilizator.  
+2. Din lista lor de streamuri se aleg **top 5 streamuri neascultate** cu cele mai multe ascultări.  
+3. Se filtrează după tipul de stream cerut (SONG, PODCAST, AUDIOBOOK).  
+
+### Recomandări „surpriză”
+1. Se selectează streamerii pe care utilizatorul **nu** i-a ascultat.  
+2. Din streamurile lor se aleg **cele mai recente 3**.  
+   - Dacă au aceeași dată de adăugare → se alege streamul cu cele mai multe ascultări.  
+3. Se filtrează după tipul de stream cerut.  
+
+## Structura fișierelor
+- `users.txt` – informații utilizatori și istoricul ascultărilor  
+- `streams.txt` – detalii streamuri (tip, creator, număr ascultări, dată adăugare)  
+- codul sursă Java/Python/C++ (în funcție de implementare)  
+
+## Setup și rulare
+1. Compilează proiectul (Java/C++/Python).  
+2. Asigură-te că fișierele `users.txt` și `streams.txt` sunt în directorul proiectului.  
+3. Rulează programul și introdu comenzile dorite (streamer/ascultător).  
+
+## Concluzie
+Proiectul demonstrează implementarea unui **sistem de recomandare** pentru aplicații de streaming audio, combinând:  
+- gestionarea utilizatorilor și conținutului,  
+- actualizarea dinamică a datelor,  
+- recomandări bazate pe preferințe și explorare (surpriză).  
