@@ -1,16 +1,56 @@
-# Tema 2 - Townhall Management System
+# Townhall Management System
 
-In aceasta tema am impementat un sistem digital de management pentru o primarie, pentru a facilita desfasurarea activitatilor precum înregistrarea unei afaceri,
-schimbarea actelor de identitate sau înregistrarea legitimației de student. Cum majoritatea cetățenilor necesita cereri pentru schimbarea de documente sau anumite task-uri
-administrative, se dorește gestionarea cât mai eficientă a acestora.
+Proiect realizat pentru cursul **Programare Orientată pe Obiect (POO)**.  
+Scopul aplicației este de a simula un sistem digital de management pentru o primărie, care să faciliteze activitățile administrative precum:  
+- înregistrarea unei afaceri,  
+- schimbarea actelor de identitate,  
+- înregistrarea legitimației de student.  
 
-In primul rand este necesara inregistrarea utilizatorilor in baza de date a primariei; asadar am creat o colectie care va retine obiecte de tip 'Utilizator' - clasa abstracta
-ce va fi explicata in continuare. Apoi parsez comenzile primite de sistem si le execut sau le refuz daca actiunea utilizatorului incalca anumite reguli. Pe scurt,
-dacă un tip de cerere nu se pretează unui anumit utilizator (de exemplu, un Pensionar solicita înlocuirea carnetului de elev), actiunea va genera o exceptie pe care o tratez
-in mod corespunzator.
+---
 
-Sistemul admite diferite tipuri de utilizatori (elev, pensionar, entitate juridica, angajat, persoana), fiecare avand un anumit set de functionalitati disponibile.
-Fiecare utilizator trebuie să îndeplinească anumite caracteristici, modelate printr-o clasă abstractă Utilizator; aceasta clasa contine, de asemenea, metode abstracte
-ce expun anumite functionalitati si vor fi implementate ulterior, in clase speficice fiecarui tip de utilizator (creare cerere, scriere cerere)
-dar si metode comune tuturor utilizatorilor (afisare cereri).
+## Descriere generală
+- Cetățenii interacționează cu sistemul prin trimiterea de **cereri**.  
+- Fiecare cerere este validată în funcție de **tipul utilizatorului** (ex: un pensionar nu poate solicita înlocuirea carnetului de elev).  
+- Dacă o cerere nu este compatibilă cu utilizatorul, se generează o **excepție**, care este tratată corespunzător.  
 
+---
+
+## Modelul obiectual
+
+### Clasa abstractă `Utilizator`
+- Reține informații comune tuturor utilizatorilor.  
+- Expune metode abstracte pentru:  
+  - crearea de cereri,  
+  - scrierea cererilor,  
+- Include și metode comune tuturor (ex. afișare cereri).  
+
+### Tipuri de utilizatori
+- **Elev**  
+- **Pensionar**  
+- **Entitate juridică**  
+- **Angajat**  
+- **Persoană fizică**  
+
+Fiecare tip de utilizator are funcționalități specifice, implementate în clase derivate.  
+
+---
+
+## Funcționalități cheie
+- Înregistrare utilizatori în baza de date a primăriei.  
+- Parsarea și execuția comenzilor trimise de utilizatori.  
+- Validarea cererilor în funcție de reguli.  
+- Gestionarea și afișarea cererilor pentru fiecare utilizator.  
+- Tratarea excepțiilor atunci când un utilizator încearcă o acțiune nevalidă.  
+
+---
+
+## Structura proiectului
+- `Utilizator.java` – clasă abstractă, baza ierarhiei.  
+- `Elev.java`, `Pensionar.java`, `EntitateJuridica.java`, `Angajat.java`, `Persoana.java` – implementări concrete.  
+- `Cerere.java` – model pentru cererile administrative.  
+- `Main.java` – punctul de intrare, unde se parsează comenzile și se rulează logica aplicației.  
+
+---
+
+## Concluzie
+Aplicația demonstrează folosirea conceptelor de **moștenire, clase abstracte și polimorfism** pentru a modela un sistem administrativ real.  
